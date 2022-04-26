@@ -27,6 +27,10 @@ body {
   justify-content: center;
 }
 
+section {
+  margin-bottom: 100px;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -39,4 +43,68 @@ main {
   justify-content: column;
   align-items: center;
 
+}
+
+.red {
+  color: red;
+}
+
+article.tweet {
+  margin: 0 auto;
+  width: 80%;
+  border: 3px solid #545149;
+  display: felx;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.tweet header,
+.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.tweet-profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.tweet-profile img {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.tweet h4.handle {
+  color: #4056A1;
+  opacity: 0.5;
+}
+
+.tweet-text {
+  padding: 0 10px;
+  margin-bottom: 5px;
+}
+
+.tweet hr {
+  border-bottom: 2px solid #545149;
+}
+
+.tweet .icons {
+  color: #4056A1;
+  display: flex;
+  flex-direction: row;
+}
+
+.tweet .icons i {
+  margin: 10px 5px;
+}
+
+.tweet .icons i:hover {
+  color: goldenrod;
+}
+
+.tweet footer p {
+  margin: 0;
+  font-size: 0.6em;
 }
