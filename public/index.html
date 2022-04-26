@@ -3,13 +3,21 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    
+    <!-- Google fonts import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -20,10 +28,39 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="logo">tweeter</span>
+      <div class ="new-tweet">
+        <span><strong>Write</strong> a new tweet</span>
+        <i class="fa-solid fa-angles-down arrow"></i>
+      </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <header>
+      <div>
+        <img src="/images/profile-hex.png"> 
+    </div>
+    <br>
+    <div>
+        <h2>Francis <span class="light">Bacon</span></h2>
+    </div>
+    </header>
+
+    <main class="container">
+      <section class="new-tweet">
+        <form action="/tweets/" method="POST">
+          <label for="tweet-text"><h3>What are you humming about?</h3></label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="new-tweet-bar">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+     <h1>Lorem </h1>
+     <h2>Ipsum</h2>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis mollitia aliquam non minus ipsum et dolorem molestias maxime harum, possimus exercitationem voluptates iusto qui modi quod quos distinctio beatae ducimus.</p>
+    </main>
   </body>
 </html>
