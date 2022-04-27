@@ -64,12 +64,6 @@ article.tweet {
 }
 
 article.tweet:hover {
-  box-shadow:
-    1px 0.7px 1.4px rgba(0, 0, 0, 0.056),
-    2.6px 1.8px 3.5px rgba(0, 0, 0, 0.08),
-    5.3px 3.7px 7.1px rgba(0, 0, 0, 0.1),
-    11px 7.7px 14.6px rgba(0, 0, 0, 0.124),
-    30px 21px 40px rgba(0, 0, 0, 0.18);
   box-shadow: 10px 10px 0px 1px rgba(64, 86, 161, 0.3);
 }
 
@@ -110,6 +104,7 @@ article.tweet:hover {
   color: #4056A1;
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 
 .tweet .icons i {
@@ -123,4 +118,33 @@ article.tweet:hover {
 .tweet footer p {
   margin: 0;
   font-size: 0.6em;
+}
+
+.up-btn-container {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: flex-end; */
+  background-color: transparent;
+  border: none;
+
+}
+
+.up-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(233, 60, 60);
+  color: #f4f1ec;
+  padding: 10px;
+  margin: 15px;
+  text-align: center;
+  /* position: fixed; */
+}
+
+.up-btn:hover {
+  cursor: pointer;
 }

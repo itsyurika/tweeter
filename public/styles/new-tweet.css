@@ -1,11 +1,3 @@
-button {
-  background-color: #4056A1;
-  color: #FFFFFF;
-  font-size: 0.8em;
-  padding: 3px 10px;
-  border-style: hidden;
-}
-
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -39,12 +31,25 @@ button {
   height: auto;
 }
 
-
 .new-tweet-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-family: "Bungee", cursive;
+}
+
+.new-tweet-bar button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  padding: 3px 10px;
+  border-style: hidden;
+}
+
+.new-tweet-bar button:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 0px 1px rgba(64, 86, 161, 0.3);
+
 }
 
 .error {
