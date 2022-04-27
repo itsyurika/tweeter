@@ -4,34 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const tweetData = [
-//   {
-//     "user": {
-//       "name": "William",
-//       "avatars": "/images/shakespear.jpeg",
-//       "handle": "@bard_of_avon"
-//     },
-//     "content": {
-//       "text": "What do you call a nervous javelin thrower? Shakespear."
-//     },
-//     "created_at": 1461116247892
-//   },
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png",
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   }
-// ];
-
 $(function() {
 
-  const createTweetElement = function(obj) {
+  const createTweetElement = function(obj) { //using escape function to prevent cross site scripting
+
+    const escape = function(string) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(string));
+      return div.innerHTML;
+    };
+
+    //template HTML for new tweets 
     const newTweet = `
       <article class="tweet">
           <header>
@@ -44,7 +27,7 @@ $(function() {
             </div>
           </header>
           <h5 class="tweet-text">
-            ${obj.content.text}
+            ${escape(obj.content.text)}
           </h5>
           <hr>
           <footer>
@@ -58,7 +41,6 @@ $(function() {
             </div>
           </footer>
         </article>
-      </section>
       `;
 
     const $newArticle = $('<article class="tweet>');
@@ -87,7 +69,7 @@ $(function() {
         url: "/tweets",
         data: tweetTxt
       }).then(function(res) {
-        location.reload();
+        loadtweets();
       });
     }
   };
