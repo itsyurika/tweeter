@@ -32,9 +32,9 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <div class ="new-tweet">
+      <div class ="new-tweet-btn">
         <span><strong>Write</strong> a new tweet</span>
-        <i class="fa-solid fa-angles-down arrow"></i>
+        <i class="fa-solid fa-angles-down red"></i>
       </div>
     </nav>
 
@@ -50,10 +50,12 @@
     </header>
 
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet hidden">
         <form action="/tweets/" method="POST" id="new-tweet-form">
           <label for="tweet-text"><h3>What are you humming about?</h3></label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <h5 class="tooLong error red hidden">You hum too long fam</h5>
+          <h5 class="tooShort error red hidden">You gotta say somethin' to hum somethin'</h5>
+          <textarea name="text" id="tweet-text" placeholder="France is bacon🥓"></textarea>
           <div class="new-tweet-bar">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -61,31 +63,6 @@
         </form>
       </section>
       <section id="tweets">
-        <!-- <article class="tweet">
-          <header>
-            <div class="tweet-profile">
-              <img src="/images/shakespear.jpeg">
-              <h4><span class="light">Wiilliam</span></h4>
-            </div>
-            <div>
-              <h4 class="handle">@bard_of_avon</h4>
-            </div>
-          </header>
-          <h5 class="tweet-text">
-            What do you call a nervous javelin thrower? Shakespear.
-          </h5>
-          <hr>
-          <footer>
-            <div class="date">
-              <p><strong>10 days ago</strong></p>
-            </div>
-            <div class="icons">
-              <i class="fa-solid fa-flag fa-2xs"></i>
-              <i class="fa-solid fa-retweet fa-2xs"></i>
-              <i class="fa-solid fa-heart fa-2xs"></i>
-            </div>
-          </footer>
-        </article> -->
       </section>
 
     </main>

@@ -6,6 +6,15 @@
 
 $(function() {
 
+  //keeping new tweet section hidden on load - and toggle slide up and down when clicked on the new tweet button
+  $(".new-tweet").hide();
+
+  $("nav div i").on("click", () => {
+    $(".new-tweet").slideToggle();
+  });
+
+  //function for creating a new tweet 
+
   const createTweetElement = function(obj) { //using escape function to prevent cross site scripting
 
     const escape = function(string) {
@@ -26,9 +35,11 @@ $(function() {
               <h4 class="handle">${obj.user.handle}</h4>
             </div>
           </header>
+          <div class="tweet-text-box">
           <h5 class="tweet-text">
-            ${escape(obj.content.text)}
+          ${escape(obj.content.text)}
           </h5>
+          </div>
           <hr>
           <footer>
             <div class="date">
@@ -42,9 +53,6 @@ $(function() {
           </footer>
         </article>
       `;
-
-    const $newArticle = $('<article class="tweet>');
-    const $newHeader = $('<header></header>');
     return newTweet;
   };
 
@@ -59,10 +67,11 @@ $(function() {
     event.preventDefault();
     const tweetTxt = $(this).serialize();
     console.log(tweetTxt);
-    if (tweetTxt.length > 145) {
-      alert("Tweet length too long");
+    $(".error").slideUp();
+    if ($(".counter").hasClass("red")) {
+      $(".tooLong").slideDown();
     } else if (tweetTxt === "text=") {
-      alert("You didn't type any message!");
+      $(".tooShort").slideDown();
     } else {
       $.ajax({
         type: "POST",
@@ -71,10 +80,12 @@ $(function() {
       }).then(function(res) {
         loadtweets();
       });
+      $("#new-tweet-form").trigger("reset");
     }
   };
 
   $("#new-tweet-form").submit(newTweetfxn);
+
 
   const loadtweets = function() {
     $.ajax({
@@ -87,3 +98,4 @@ $(function() {
 
   loadtweets();
 });
+

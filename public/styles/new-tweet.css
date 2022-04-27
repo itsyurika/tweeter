@@ -8,7 +8,8 @@ button {
 
 .new-tweet {
   display: flex;
-  justify-content: column;
+  flex-direction: column;
+  align-items: center;
 }
 
 .new-tweet form {
@@ -20,6 +21,12 @@ button {
   color: #95918a;
 }
 
+.tweet-text-box {
+  /* had to create another box to contain the text in order to control the input in case text was one long string of letters */
+  height: auto;
+  word-wrap: break-word
+}
+
 #tweet-text {
   background: transparent;
   width: 100%;
@@ -29,6 +36,7 @@ button {
   resize: none;
   font-size: 0.8em;
   font-weight: bold;
+  height: auto;
 }
 
 
@@ -37,4 +45,11 @@ button {
   flex-direction: row;
   justify-content: space-between;
   font-family: "Bungee", cursive;
+}
+
+.error {
+  border: 2px solid red;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
 }

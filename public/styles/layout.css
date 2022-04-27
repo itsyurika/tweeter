@@ -46,11 +46,15 @@ main {
 }
 
 .red {
-  color: red;
+  color: rgb(233, 60, 60);
+}
+
+.hidden {
+  display: none;
 }
 
 article.tweet {
-  margin: 0 auto 50px;
+  margin: 25px auto 50px;
   width: 80%;
   border: 3px solid #545149;
   display: felx;
