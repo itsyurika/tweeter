@@ -74,13 +74,15 @@ $(function() {
 
   const newTweetfxn = function(event) {
     event.preventDefault();
-    const tweetTxt = $(this).serialize;
+    const tweetTxt = $(this).serialize().slice(5);
     console.log(tweetTxt);
-    // $.ajax({
-    //   type: "POST",
-    //   url: "/tweets/",
-    //   data: tweetTxt
-    // }).then((res) => { tweetData.push(res); });
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: tweetTxt
+    }).then((res) => {
+      alert("success!");
+    });
   };
 
   $("#new-tweet-form").submit(newTweetfxn);
