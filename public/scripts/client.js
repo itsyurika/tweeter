@@ -69,7 +69,7 @@ $(function() {
   const renderTweets = function(tweetData) {
     for (const tweet of tweetData) {
       const $tweet = createTweetElement(tweet);
-      $("#tweets").append($tweet);
+      $("#tweets").prepend($tweet);
     }
   };
 
@@ -77,15 +77,19 @@ $(function() {
     event.preventDefault();
     const tweetTxt = $(this).serialize();
     console.log(tweetTxt);
-    console.log(typeof (tweetTxt));
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: tweetTxt
-    }).then(function(req) {
-      console.log("newTweetFxn successful");
-      console.log(req);
-    });
+    if (tweetTxt.length > 145) {
+      alert("Tweet length too long");
+    } else if (tweetTxt === "text=") {
+      alert("You didn't type any message!");
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: tweetTxt
+      }).then(function(res) {
+        location.reload();
+      });
+    }
   };
 
   $("#new-tweet-form").submit(newTweetfxn);
