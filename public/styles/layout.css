@@ -50,12 +50,23 @@ main {
 }
 
 article.tweet {
-  margin: 0 auto;
+  margin: 0 auto 50px;
   width: 80%;
   border: 3px solid #545149;
   display: felx;
   flex-direction: column;
   padding: 20px;
+
+}
+
+article.tweet:hover {
+  box-shadow:
+    1px 0.7px 1.4px rgba(0, 0, 0, 0.056),
+    2.6px 1.8px 3.5px rgba(0, 0, 0, 0.08),
+    5.3px 3.7px 7.1px rgba(0, 0, 0, 0.1),
+    11px 7.7px 14.6px rgba(0, 0, 0, 0.124),
+    30px 21px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: 10px 10px 0px 1px rgba(64, 86, 161, 0.3);
 }
 
 .tweet header,
@@ -72,7 +83,8 @@ article.tweet {
 }
 
 .tweet-profile img {
-  width: 100px;
+  width: 80px;
+  height: 80px;
   margin-right: 10px;
 }
 

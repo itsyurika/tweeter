@@ -44,3 +44,10 @@ module.exports = function(DataHelpers) {
   return tweetsRoutes;
 
 };
+
+// saveTweet: function(newTweet, callback) {
+//   simulateDelay(() => {
+//     db.tweets.push(newTweet);
+//     callback(null, true);
+//   });
+// },
