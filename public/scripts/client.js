@@ -4,30 +4,30 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = [
-  {
-    "user": {
-      "name": "William",
-      "avatars": "/images/shakespear.jpeg",
-      "handle": "@bard_of_avon"
-    },
-    "content": {
-      "text": "What do you call a nervous javelin thrower? Shakespear."
-    },
-    "created_at": 1461116247892
-  },
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  }
-];
+// const tweetData = [
+//   {
+//     "user": {
+//       "name": "William",
+//       "avatars": "/images/shakespear.jpeg",
+//       "handle": "@bard_of_avon"
+//     },
+//     "content": {
+//       "text": "What do you call a nervous javelin thrower? Shakespear."
+//     },
+//     "created_at": 1461116247892
+//   },
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   }
+// ];
 
 $(function() {
 
@@ -49,7 +49,7 @@ $(function() {
           <hr>
           <footer>
             <div class="date">
-              <p><strong>${obj.created_at}</strong></p>
+              <p><strong>${timeago.format(obj.created_at)}</strong></p>
             </div>
             <div class="icons">
               <i class="fa-solid fa-flag fa-2xs"></i>
@@ -66,37 +66,38 @@ $(function() {
     return newTweet;
   };
 
-
-  for (const tweet of tweetData) {
-    const $tweet = createTweetElement(tweet);
-    $("#tweets").append($tweet);
-  }
+  const renderTweets = function(tweetData) {
+    for (const tweet of tweetData) {
+      const $tweet = createTweetElement(tweet);
+      $("#tweets").append($tweet);
+    }
+  };
 
   const newTweetfxn = function(event) {
     event.preventDefault();
-    const tweetTxt = $(this).serialize().slice(5);
+    const tweetTxt = $(this).serialize();
     console.log(tweetTxt);
+    console.log(typeof (tweetTxt));
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: tweetTxt
-    }).then((res) => {
-      alert("success!");
+    }).then(function(req) {
+      console.log("newTweetFxn successful");
+      console.log(req);
     });
   };
 
   $("#new-tweet-form").submit(newTweetfxn);
 
+  const loadtweets = function() {
+    $.ajax({
+      type: "GET",
+      url: "/tweets",
+    }).then(function(tweets) {
+      renderTweets(tweets);
+    });
+  };
+
+  loadtweets();
 });
-
-// module.exports = function makeDataHelpers(db) {
-//   return {
-
-//     // Saves a tweet to `db`
-//     saveTweet: function(newTweet, callback) {
-//       simulateDelay(() => {
-//         db.tweets.push(newTweet);
-//         console.log(db.tweets);
-//         callback(null, true);
-//       });
-//     },;
