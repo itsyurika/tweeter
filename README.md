@@ -1,18 +1,23 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone with a responsive design that supports desktop mode(>1024px) and tablet mode(<1024px).
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Final Product
 
-## Getting Started
+* Tweeter has the typical message posting function.
+!["Tweeter on desktop mode - automatically displays the newest message on top."](https://github.com/itsyurika/tweeter-template/blob/master/docs/desktop_tweet.gif?raw=true)
+* Floating button on the corner allows users to easily type in a new message no matter how far down they've scrolled through the contents.
+!["Tweeter on desktop mode - up button appears only once you start scrolling"](https://github.com/itsyurika/tweeter-template/blob/master/docs/desktop_up_button.gif?raw=true)
+* Tweeter checks and validates if the input value is empty or too long. 
+!["Tweetor on mobile mode - displays error message on incorrect form submission"](https://raw.githubusercontent.com/itsyurika/tweeter-template/641230ac5f80458febbc4cfb94567b62eb1ed805/docs/mobile_form_validation.gif)
 
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
 
 - Express
 - Node 5.10.x or above
+
+## Getting Started
+
+- Install all dependencies (using the `npm install` command).
+- Run the development web server using the `npm run local` command.
