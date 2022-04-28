@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone with a responsive design that supports desktop mode(>1024px) and tablet mode(<1024px).
+A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain ol' CSS3 with a responsive design that supports desktop mode(>1024px) and tablet mode(<1024px).
 
 ## Final Product
 
@@ -16,6 +16,9 @@ Tweeter is a simple, single-page Twitter clone with a responsive design that sup
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+- md5
 
 ## Getting Started
 
