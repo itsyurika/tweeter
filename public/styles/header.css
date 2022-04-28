@@ -1,9 +1,10 @@
 .page-profile {
   box-sizing: content-box;
   height: 400px;
+  /* keeping it in px because it was one of the requirements and just to show it clearly*/
   width: 100%;
-  padding-top: 60px;
-  margin-bottom: 20px;
+  padding-top: 6rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +13,6 @@
   background-image: url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
 }
 
-header h2 {
-  margin: 10px;
+.page-profile h2 {
+  margin: 1rem;
 }

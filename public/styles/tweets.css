@@ -1,0 +1,70 @@
+/*css file with tweets behavior and design*/
+
+article.tweet {
+  margin: 2.5rem auto 5rem;
+  width: 80%;
+  border: 0.3rem solid #545149;
+  display: felx;
+  flex-direction: column;
+  padding: 2rem;
+
+}
+
+article.tweet:hover {
+  box-shadow: 1rem 1rem 0 0.1rem rgba(64, 86, 161, 0.3);
+}
+
+.tweet header,
+.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.tweet-profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.tweet-profile img {
+  width: 8rem;
+  height: 8rem;
+  margin-right: 1rem;
+}
+
+.tweet h4.handle {
+  color: #4056A1;
+  opacity: 0.5;
+}
+
+.tweet-text-box {
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+.tweet hr {
+  border-bottom: 0.2rem solid #545149;
+}
+
+.tweet .icons {
+  color: #4056A1;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.tweet .icons i {
+  margin: 1rem 0.5rem;
+}
+
+.tweet .icons i:hover {
+  color: goldenrod;
+  cursor: pointer;
+}
+
+.tweet footer p {
+  margin: 0;
+  font-size: 1.2rem;
+}

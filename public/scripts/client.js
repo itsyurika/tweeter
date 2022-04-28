@@ -5,18 +5,19 @@
  */
 
 $(function() {
-
-  //keeping new tweet section hidden on load - and toggle slide up and down when clicked on the new tweet button
+  //keeping new tweet section hidden on load 
   $(".new-tweet").hide();
 
+  //new tweet button will toggle slide up and down the new tweet form
   $("nav div i").on("click", () => {
     $(".new-tweet").slideToggle();
+    $("#tweet-text").focus();
   });
 
   //function for creating a new tweet 
+  const createTweetElement = function(obj) {
 
-  const createTweetElement = function(obj) { //using escape function to prevent cross site scripting
-
+    //using escape function to prevent cross site scripting
     const escape = function(string) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(string));
@@ -54,6 +55,7 @@ $(function() {
     return newTweet;
   };
 
+  // adds the newly created tweets to the tweets section of the main element  
   const renderTweets = function(tweetData) {
     for (const tweet of tweetData) {
       const $tweet = createTweetElement(tweet);
@@ -61,20 +63,20 @@ $(function() {
     }
   };
 
+  //function for new tweet text validation and submission to send the data to the server
   const newTweetfxn = function(event) {
     event.preventDefault();
     const tweetTxt = $(this).serialize();
     const $error = $(".error");
     const $counter = $(".counter");
-    console.log(tweetTxt);
     $error.slideUp();
-    if ($counter.hasClass("red")) {
+    if ($counter.hasClass("red")) { //if the input letter counter > 140
       $error.text("You hum too much fam");
       $error.slideDown();
-    } else if (tweetTxt === "text=") {
+    } else if (tweetTxt === "text=") { //if the input textarea is empty
       $error.text("Gotta say somethin' to hum about somethin'");
       $error.slideDown();
-    } else {
+    } else { //sending off the new tweet to the server
       $.ajax({
         type: "POST",
         url: "/tweets",
@@ -87,9 +89,10 @@ $(function() {
     }
   };
 
+  //calls back the newTweet function on submitting the new tweet form
   $("#new-tweet-form").submit(newTweetfxn);
 
-
+  //function for fetching tweet contents from db and passing them into function that displays it on the page
   const loadtweets = function() {
     $.ajax({
       type: "GET",
