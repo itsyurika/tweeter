@@ -1,13 +1,14 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Tweeter - Home Page</title>
     
     <!-- Google fonts import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
+    
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -33,24 +34,25 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <div class ="new-tweet-btn">
+      <div class="new-tweet-btn">
         <span><strong>Write</strong> a new tweet</span>
         <i class="fa-solid fa-angles-down red"></i>
       </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <header>
+    <div class="container">
+     <header class="page-profile">
       <div>
         <img src="/images/profile-hex.png"> 
-    </div>
-    <br>
-    <div>
+      </div>
+     <br>
+       <div>
         <h2>Francis <span class="light">Bacon</span></h2>
-    </div>
-    </header>
-
-    <main class="container">
+        </div>
+     </header>
+  
+    <main>
       <section class="new-tweet hidden">
         <form action="/tweets/" method="POST" id="new-tweet-form">
           <label for="tweet-text"><h3>What are you humming about?</h3></label>
@@ -69,5 +71,6 @@
       <div class="up-btn hidden"><i class="fa-solid fa-angles-up"></i></div>
     </div>
     </main>
+  </div>
   </body>
 </html>

@@ -26,6 +26,7 @@
 }
 
 .new-tweet-bar {
+  margin-top: 3px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -36,7 +37,7 @@
   background-color: #4056A1;
   color: #FFFFFF;
   font-size: 0.8em;
-  padding: 3px 10px;
+  padding: 2px 10px;
   border-style: hidden;
 }
 
@@ -51,4 +52,27 @@
   text-align: center;
   padding: 5px;
   margin: 5px;
+}
+
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    margin-top: 13%;
+  }
+
+  .page-profile {
+    padding-top: 0;
+    margin-top: 24px;
+    margin-left: 50px;
+    width: 35%;
+
+  }
+
+  main {
+    width: 65%;
+  }
 }

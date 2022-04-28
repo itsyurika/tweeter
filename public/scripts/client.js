@@ -69,10 +69,10 @@ $(function() {
     console.log(tweetTxt);
     $error.slideUp();
     if ($counter.hasClass("red")) {
-      $error.text("Too Long");
+      $error.text("You hum too much fam");
       $error.slideDown();
     } else if (tweetTxt === "text=") {
-      $error.text("Too Short");
+      $error.text("Gotta say somethin' to hum about somethin'");
       $error.slideDown();
     } else {
       $.ajax({

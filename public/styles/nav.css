@@ -1,12 +1,14 @@
 nav {
+  box-sizing: border-box;
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  padding: 1.5em;
+  background-color: transparent;
+  color: #545149;
   display: inline-flex;
+  padding: 1em;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   z-index: 5;
   position: fixed;
   top: 0;
@@ -16,13 +18,42 @@ nav div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* color: #545149; */
+}
+
+nav div i {
+  animation: jump 1s infinite;
+  animation-direction: alternate;
 }
 
 nav div i:hover {
   cursor: pointer;
 }
 
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+
 .logo {
   font-family: "Bungee", cursive;
   font-size: 1.3em;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    color: #FFFFFF;
+  }
+
+  .logo {
+    color: #FFFFFF;
+  }
+
 }
