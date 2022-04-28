@@ -35,11 +35,9 @@ $(function() {
               <h4 class="handle">${obj.user.handle}</h4>
             </div>
           </header>
-          <div class="tweet-text-box">
-          <h5 class="tweet-text">
+          <h5 class="tweet-text-box">
           ${escape(obj.content.text)}
           </h5>
-          </div>
           <hr>
           <footer>
             <div class="date">
@@ -66,12 +64,16 @@ $(function() {
   const newTweetfxn = function(event) {
     event.preventDefault();
     const tweetTxt = $(this).serialize();
+    const $error = $(".error");
+    const $counter = $(".counter");
     console.log(tweetTxt);
-    $(".error").slideUp();
-    if ($(".counter").hasClass("red")) {
-      $(".tooLong").slideDown();
+    $error.slideUp();
+    if ($counter.hasClass("red")) {
+      $error.text("Too Long");
+      $error.slideDown();
     } else if (tweetTxt === "text=") {
-      $(".tooShort").slideDown();
+      $error.text("Too Short");
+      $error.slideDown();
     } else {
       $.ajax({
         type: "POST",
@@ -79,6 +81,7 @@ $(function() {
         data: tweetTxt
       }).then(function(res) {
         loadtweets();
+        $counter.text(140);
       });
       $("#new-tweet-form").trigger("reset");
     }

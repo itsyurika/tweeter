@@ -54,8 +54,8 @@
       <section class="new-tweet hidden">
         <form action="/tweets/" method="POST" id="new-tweet-form">
           <label for="tweet-text"><h3>What are you humming about?</h3></label>
-          <h5 class="tooLong error red hidden">You hum too long fam</h5>
-          <h5 class="tooShort error red hidden">You gotta say somethin' to hum somethin'</h5>
+          <h5 class="error red hidden"></h5>
+          <!-- <h5 class="tooShort error red hidden">You gotta say somethin' to hum somethin'</h5> -->
           <textarea name="text" id="tweet-text" placeholder="France is bacon🥓"></textarea>
           <div class="new-tweet-bar">
             <button type="submit">Tweet</button>
@@ -65,8 +65,8 @@
       </section>
       <section id="tweets">
       </section>
-    <div class="up-btn-container hidden">
-      <div class="up-btn"><i class="fa-solid fa-angles-up"></i></div>
+    <div class="up-btn-container">
+      <div class="up-btn hidden"><i class="fa-solid fa-angles-up"></i></div>
     </div>
     </main>
   </body>

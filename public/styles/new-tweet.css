@@ -13,12 +13,6 @@
   color: #95918a;
 }
 
-.tweet-text-box {
-  /* had to create another box to contain the text in order to control the input in case text was one long string of letters */
-  height: auto;
-  word-wrap: break-word
-}
-
 #tweet-text {
   background: transparent;
   width: 100%;

@@ -49,6 +49,10 @@ main {
   color: rgb(233, 60, 60);
 }
 
+.light {
+  font-weight: 300;
+}
+
 .hidden {
   display: none;
 }
@@ -91,9 +95,10 @@ article.tweet:hover {
   opacity: 0.5;
 }
 
-.tweet-text {
+.tweet-text-box {
   padding: 0 10px;
   margin-bottom: 5px;
+  word-wrap: break-word;
 }
 
 .tweet hr {
