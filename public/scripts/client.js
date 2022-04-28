@@ -82,9 +82,12 @@ $(function() {
         url: "/tweets",
         data: tweetTxt
       }).then(function(res) {
-        loadtweets();
+        loadNewTweet("/tweets");
         $counter.text(140);
-      });
+      })
+        .catch(function(e) {
+          console.log(e);
+        });
       $("#new-tweet-form").trigger("reset");
     }
   };
@@ -93,15 +96,29 @@ $(function() {
   $("#new-tweet-form").submit(newTweetfxn);
 
   //function for fetching tweet contents from db and passing them into function that displays it on the page
-  const loadtweets = function() {
+  const loadtweets = function(url) {
     $.ajax({
       type: "GET",
-      url: "/tweets",
+      url: url,
     }).then(function(tweets) {
       renderTweets(tweets);
+    }).catch(function(e) {
+      console.log(e);
     });
   };
 
-  loadtweets();
+  //function for fetching the latest tweet 
+  const loadNewTweet = function(url) {
+    $.ajax({
+      type: "GET",
+      url: url,
+    }).then(function(tweets) { //grabs the array of tweets from db
+      renderTweets([tweets[tweets.length - 1]]); //gotta put it in [] to make it into an array, since renderTweets function only works with array
+    }).catch(function(e) {
+      console.log(e);
+    });
+  };
+
+  loadtweets("/tweets");
 });
 
